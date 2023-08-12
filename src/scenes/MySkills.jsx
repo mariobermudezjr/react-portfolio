@@ -59,14 +59,14 @@ const MySkills = () => {
           <div className="relative h-32">
             <div className="z-10">
               <p className="font-playfair font-semibold text-5xl">01</p>
-              <p className="font-playfair font-semibold text-3xl mt-3">React JS</p>
+              <p className="font-playfair font-semibold text-3xl mt-3">React JS & MUI</p>
             </div>
             <div className="w-1/2 md:w-3/4 h-32 bg-blue absolute right-0 top-0 z-[-1]" />
           </div>
           <p className="mt-5 text-justify">
-            ReactJS is a popular JavaScript library for building dynamic user interfaces. We can
-            create interactive, responsive, and reusable components, manage state effectively, and
-            utilize various React features to craft modern web applications
+            ReactJS is a renowned JavaScript library for dynamic, responsive UIs and effective state
+            management. MUI (Material-UI) complements React by offering elegant Material Design
+            components, allowing for beautiful designs and seamless integration in React projects.
           </p>
         </motion.div>
 
@@ -85,14 +85,16 @@ const MySkills = () => {
           <div className="relative h-32">
             <div className="z-10">
               <p className="font-playfair font-semibold text-5xl">02</p>
-              <p className="font-playfair font-semibold text-3xl mt-3">MUI Library</p>
+              <p className="font-playfair font-semibold text-3xl mt-3">React-Native</p>
             </div>
             <div className="w-1/2 md:w-3/4 h-32 bg-red absolute right-0 top-0 z-[-1]" />
           </div>
           <p className="mt-5 text-justify">
-            MUI (Material-UI) is a React UI framework providing ready-to-use components with a
-            Material Design look. We can efficiently design beautiful and responsive user
-            interfaces, customize components, and integrate them seamlessly into React projects.
+            React Native (RN) is a framework for building mobile apps using a blend of JavaScript
+            and React components. My portfolio includes developing solutions for hospital equipment
+            using QR Code scanning features. The other project we built was an MVP for virtual
+            payment systems tailored for both iOS and Android mobile, emphasizing secure and
+            user-friendly experiences.
           </p>
         </motion.div>
         {/* IMAGINATIVE */}
@@ -115,9 +117,9 @@ const MySkills = () => {
             <div className="w-1/2 md:w-3/4 h-32 bg-yellow absolute right-0 top-0 z-[-1]" />
           </div>
           <p className="mt-5 text-justify">
-            MERN is a full-stack web development stack using MongoDB, Express, React, and Node.js.
-            We can build feature-rich web applications, create RESTful APIs, handle data
-            efficiently, and deploy the app to production environments.
+            MERN is a full-stack web development stack using MongoDB, Express, React, and Node.js. I
+            can build feature-rich web applications, create RESTful APIs, handle data efficiently,
+            and efficiently deploy the app to production environments.
           </p>
         </motion.div>
       </div>
