@@ -24,7 +24,8 @@ const MySkills = () => {
           </p>
           <LineGradient width="w-1/3" />
           <p className="mt-10 mb-7">
-            My top three skills include React JS, MUI design library and MERN full stack apps.
+            My top three skills include React JS, MUI design library, React Native and MERN full
+            stack apps.
           </p>
         </motion.div>
 
