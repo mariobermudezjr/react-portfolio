@@ -7,8 +7,8 @@ const Link = ({ page, selectedPage, setSelectedPage }) => {
   return (
     <AnchorLink
       className={`${
-        selectedPage === lowerCasePage ? 'text-yellow' : ''
-      } hover:text-yellow transition duration-500`}
+        selectedPage === lowerCasePage ? 'text-red' : ''
+      } hover:text-red transition duration-500`}
       href={`#${lowerCasePage}`}
       onClick={() => setSelectedPage(lowerCasePage)}
     >
@@ -53,14 +53,14 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
         {!isDesktop && isMenuToggled && (
           <div className="fixed right-0 bottom-0 h-full bg-blue w-[300px]">
             {/* CLOSE ICON */}
-            <div className="flex justify-end p-12">
+            <div className="flex justify-end p-8 mr-2.5">
               <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
                 <img alt="close-icon" src="../assets/close-icon.svg" />
               </button>
             </div>
 
             {/* MENU ITEMS */}
-            <div className="flex flex-col gap-10 ml-[33%] text-2xl text-deep-blue">
+            <div className="flex flex-col gap-10 ml-[33%] text-2xl text-blue-sky">
               <Link page="Home" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
               <Link page="Skills" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
               <Link page="Projects" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />

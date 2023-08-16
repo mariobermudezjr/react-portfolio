@@ -6,11 +6,12 @@ const Contact = () => {
   const {
     register,
     trigger,
+    handleSubmit,
     formState: { errors },
   } = useForm()
 
-  const onSubmit = async (e) => {
-    console.log('~ e', e)
+  const onSubmitForm = async (e) => {
+    console.log('Values', e)
     const isValid = await trigger()
     if (!isValid) {
       e.preventDefault()
@@ -70,16 +71,17 @@ const Contact = () => {
         >
           <form
             target="_blank"
-            onSubmit={onSubmit}
+            onSubmit={handleSubmit(onSubmitForm)}
             action="https://formsubmit.co/e8a5bdfa807605332f809e5656e27c6e"
             method="POST"
           >
             <input
               className="w-full bg-white text-black font-semibold placeholder-opaque-black p-3"
               type="text"
-              placeholder="NAME"
+              placeholder="FULL NAME"
               {...register('name', {
                 required: true,
+                minLength: 4,
                 maxLength: 100,
               })}
             />
@@ -114,6 +116,7 @@ const Contact = () => {
               cols="50"
               {...register('message', {
                 required: true,
+                minLength: 5,
                 maxLength: 2000,
               })}
             />
