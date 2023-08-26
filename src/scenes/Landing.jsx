@@ -56,7 +56,7 @@ const Landing = ({ setSelectedPage }) => {
           </p>
 
           <p className="mt-10 mb-7 text-sm text-center md:text-start">
-            Front end developer who enjoys doing projects in react using ReactJS.
+            Front end developer who enjoys doing projects in react using ReactJS and React Native.
           </p>
         </motion.div>
 
