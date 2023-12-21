@@ -26,6 +26,11 @@ const Project = ({ title, desc }) => {
         <p className="text-2xl font-playfair">{title}</p>
         <p className="mt-7">{desc}</p>
       </div>
+      {/* 
+    Note to Future Self:
+    To add new assets to the pojrect, the path of assets is the following:
+    Example for MacOSX: /Users/macbookair/Desktop/src/personal/react-portfolio/public/assets/{filename}
+    */}
       <img src={`../assets/${projectTitle}.jpeg`} alt={projectTitle} />
     </motion.div>
   )
@@ -85,7 +90,10 @@ const Projects = () => {
           {/* ROW 2 */}
           <Project title="Project 3" desc="Project Description" />
           <Project title="Project 4" desc="Project Description" />
-          <Project title="Project 5" desc="Project Description" />
+          <Project
+            title="iOS AI Assistant"
+            desc="A native app that leverages RN tech for both Android and iOS"
+          />
 
           {/* ROW 3 */}
           <Project title="Project 6" desc="Project Description" />
