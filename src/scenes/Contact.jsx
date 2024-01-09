@@ -1,9 +1,18 @@
+import { useEffect } from 'react'
 import LineGradient from '../components/LineGradient'
 import { useForm } from 'react-hook-form'
 import { motion } from 'framer-motion'
 
 const Contact = () => {
-  const { register, handleSubmit } = useForm()
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState,
+    formState: { errors },
+  } = useForm({ defaultValues: { name: '', email: '', message: '' } })
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+
   const onSubmit = async (data, e) => {
     e.preventDefault()
     let newKeyValuePairs = []
@@ -16,7 +25,7 @@ const Contact = () => {
     let newFormDataString = newKeyValuePairs.join('&')
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_GOOGLE_URL}`, {
+      await fetch(`${process.env.REACT_APP_GOOGLE_URL}`, {
         method: 'POST',
         redirect: 'follow',
         body: newFormDataString,
@@ -27,23 +36,31 @@ const Contact = () => {
         .then((response) => {
           // Check if the request was successful
           if (response) {
+            alert('Message Sent!')
             return response // Assuming your script returns JSON response
           } else {
             throw new Error('Failed to submit the form.')
           }
         })
         .then((data) => {
-          console.log(data)
           // Display a success message
         })
         .catch((error) => console.log(error))
       // const data = await response.json()
-      // console.log('data: ', data)
     } catch (error) {
-      console.log(error)
+      // Display Error that something went wrong
+      alert('Failed to send, try changing your input values')
     }
   }
-  const onError = (errors, e) => console.log(errors, e)
+  const onError = (errors, e) => {
+    alert('Failed to send, check required fields')
+  }
+
+  useEffect(() => {
+    if (formState.isSubmitSuccessful) {
+      reset({ name: '', email: '', message: '' })
+    }
+  }, [formState, reset])
 
   return (
     <section id="contact" className="contact mt-24 mb-24">
@@ -91,6 +108,12 @@ const Contact = () => {
           placeholder="Name"
           {...register('name', { required: true, minLength: 2, maxLength: 100 })}
         />
+        {errors.name && (
+          <p className="text-red mt-1">
+            {errors.name.type === 'required' && 'This field is required.'}
+            {errors.name.type === 'maxLength' && 'Max length is 100 char.'}
+          </p>
+        )}
         <input
           className="w-full bg-white text-black font-semibold placeholder-opaque-black p-3 mb-3"
           placeholder="Email"
@@ -98,10 +121,20 @@ const Contact = () => {
             required: true,
             minLength: 2,
             maxLength: 100,
+            pattern: {
+              value: emailRegex,
+              message: 'Enter a valid Email Address.',
+            },
           })}
         />
-        <input
-          className="w-full bg-white text-black font-semibold placeholder-opaque-black p-3 mb-3"
+        {errors.email && (
+          <p className="text-red mt-1">
+            {errors.email.type === 'required' && 'This field is required.'}
+            {errors.email.type === 'pattern' && 'Invalid email address.'}
+          </p>
+        )}
+        <textarea
+          className="w-full bg-white text-black font-semibold placeholder-opaque-black p-3 mt-5"
           placeholder="Message"
           {...register('message', {
             required: true,
@@ -109,6 +142,12 @@ const Contact = () => {
             maxLength: 100,
           })}
         />
+        {errors.message && (
+          <p className="text-red mt-1">
+            {errors.message.type === 'required' && 'This field is required.'}
+            {errors.message.type === 'maxLength' && 'Max length is 2000 char.'}
+          </p>
+        )}
 
         <button
           className="p-5 bg-yellow font-semibold text-deep-blue mt-5 hover:bg-red hover:text-white transition duration-500"
