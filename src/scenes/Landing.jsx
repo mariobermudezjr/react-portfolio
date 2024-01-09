@@ -1,17 +1,21 @@
 import SocialMediaIcons from '../components/SocialMediaIcons'
-// import useMediaQuery from '../hooks/useMediaQuery'
+import useMediaQuery from '../hooks/useMediaQuery'
 import { motion } from 'framer-motion'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const Landing = ({ setSelectedPage }) => {
-  // const isAboveLarge = useMediaQuery('(min-width: 1060px)')
+  const isAboveLarge = useMediaQuery('(min-width: 1060px)')
+  const isMobile = useMediaQuery('(max-width: 600px)')
+
+  console.log('isMobile: ', isMobile)
+  console.log('isAboveLarge: ', isAboveLarge)
   return (
     <section
       id="home"
       className="md:flex md:justify-between md:items-center gap-16 md:h-full py-10"
     >
       {/* IMAGE SECTION */}
-      {/* <div className="basis-3/5 z-10 mt-16 md:mt-32 flex justify-center md:order-2">
+      <div className="basis-full z-10 mt-16 md:mt-32 flex justify-center md:order-2">
         {isAboveLarge ? (
           <div
             className="relative z-0 ml-20 before:absolute before:-top-20 before:-left-20 before:rounded-t-[400px]
@@ -19,18 +23,18 @@ const Landing = ({ setSelectedPage }) => {
           >
             <img
               alt="profile"
-              className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]"
-              src="assets/profile-image.png"
+              className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[800px] md:max-w-[1200px]"
+              src="assets/profile-imag.png"
             />
           </div>
         ) : (
           <img
             alt="profile"
-            className="z-10 w-full max-w-[400px] md:max-w-[600px]"
-            src="assets/profile-image.png"
+            className="z-10 w-full max-w-[200px] md:max-w-[300px]"
+            src="assets/profile-imag.png"
           />
         )}
-      </div> */}
+      </div>
 
       {/* MAIN TEXT */}
       <div className="z-30 basis-2/ mt-12 md:mt-32">
@@ -51,12 +55,17 @@ const Landing = ({ setSelectedPage }) => {
               className="xs:relative @apply xs:text-blue-600 #{!important} xs:font-semibold z-20 xs:before:content-brush
               before:absolute before:-left-[15px] before:-top-[70px] before:z-[-1] min-w-fit"
             >
-              Bermudez
+              Bermudez Jr
             </span>
           </p>
 
           <p className="mt-10 mb-7 text-sm text-center md:text-start">
-            Front end developer who enjoys doing projects in react using ReactJS and React Native.
+            A full stack developer with 3+ years of experience. Solution-driven professional
+            excelling in highly collaborative work environment, finding solutions to challenges and
+            focused on customer satisfaction. Proven experience developing consumer-focused web
+            sites. Worked through challenges by designing and developing solutions and building web
+            applications aligned to customer's services. Translating solutions into code and working
+            across many different APIs, third-party integrations and databases.”
           </p>
         </motion.div>
 
@@ -72,20 +81,20 @@ const Landing = ({ setSelectedPage }) => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          {/* <AnchorLink
-            className="bg-gradient-rainblue text-deep-blue rounded-sm py-3 px-7 font-semibold mr-4
+          <AnchorLink
+            className="bg-gradient-rainblue text-deep-blue rounded-sm py-2 px-10 font-semibold mr-4
               hover:bg-blue hover:text-white transition duration-500"
-            onClick={() => setSelectedPage('contact')}
-            href="#contact"
+            onClick={() => setSelectedPage('skills')}
+            href="#skills"
           >
-            Contact Me
-          </AnchorLink> */}
+            Explore
+          </AnchorLink>
           <AnchorLink
             className="rounded-r-sm bg-gradient-rainblue py-0.5 pr-1.5"
             onClick={() => setSelectedPage('projects')}
             href="#projects"
           >
-            <div className="bg-deep-blue hover:text-red transition duration-500 py-2 px-7 w-full h-full flex items-center mx-1 justify-center px-10 py-10 font-playfair">
+            <div className="bg-deep-blue hover:text-red transition duration-500 py-2 w-full h-full flex items-center align-center mx-1 justify-center px-10 font-playfair">
               Projects
             </div>
           </AnchorLink>
