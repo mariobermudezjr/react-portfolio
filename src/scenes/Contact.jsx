@@ -74,13 +74,13 @@ const Contact = () => {
           hidden: { opacity: 0, x: 50 },
           visible: { opacity: 1, x: 0 },
         }}
-        className="flex  justify-start w-full"
+        className="flex  justify-center w-full"
       >
         <div>
           <p className="font-playfair font-semibold text-4xl">
             <span className="text-yellow">CONTACT INFO</span>
           </p>
-          <div className="flex md:justify-start my-5">
+          <div className="flex md:justify-center my-5">
             <LineGradient width="w-full" />
           </div>
         </div>
@@ -100,62 +100,80 @@ const Contact = () => {
         >
           <img src="../assets/contact-image.jpeg" alt="contact" />
         </motion.div>
-      </div>
-      {/* FORM */}
-      <form onSubmit={handleSubmit(onSubmit, onError)}>
-        <input
-          className="w-full bg-white text-black font-semibold placeholder-opaque-black p-3 mb-3"
-          placeholder="Name"
-          {...register('name', { required: true, minLength: 2, maxLength: 100 })}
-        />
-        {errors.name && (
-          <p className="text-red mt-1">
-            {errors.name.type === 'required' && 'This field is required.'}
-            {errors.name.type === 'maxLength' && 'Max length is 100 char.'}
-          </p>
-        )}
-        <input
-          className="w-full bg-white text-black font-semibold placeholder-opaque-black p-3 mb-3"
-          placeholder="Email"
-          {...register('email', {
-            required: true,
-            minLength: 2,
-            maxLength: 100,
-            pattern: {
-              value: emailRegex,
-              message: 'Enter a valid Email Address.',
-            },
-          })}
-        />
-        {errors.email && (
-          <p className="text-red mt-1">
-            {errors.email.type === 'required' && 'This field is required.'}
-            {errors.email.type === 'pattern' && 'Invalid email address.'}
-          </p>
-        )}
-        <textarea
-          className="w-full bg-white text-black font-semibold placeholder-opaque-black p-3 mt-5"
-          placeholder="Message"
-          {...register('message', {
-            required: true,
-            minLength: 2,
-            maxLength: 100,
-          })}
-        />
-        {errors.message && (
-          <p className="text-red mt-1">
-            {errors.message.type === 'required' && 'This field is required.'}
-            {errors.message.type === 'maxLength' && 'Max length is 2000 char.'}
-          </p>
-        )}
 
-        <button
-          className="p-5 bg-yellow font-semibold text-deep-blue mt-5 hover:bg-red hover:text-white transition duration-500"
-          type="submit"
+        {/* FORM */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          className="alibasis-1/2 mt-10 md:mt-0 mr-10"
         >
-          SEND
-        </button>
-      </form>
+          <form
+            className="flex flex-col justify-evenly place-content-center mt-20"
+            onSubmit={handleSubmit(onSubmit, onError)}
+          >
+            <div>
+              <input
+                className=" w-full md:1-auto bg-white text-black font-semibold placeholder-opaque-black p-3 mr-1 mb-1 rounded-md"
+                placeholder="Name"
+                {...register('name', { required: true, minLength: 2, maxLength: 100 })}
+              />
+              {errors.name && (
+                <p className="text-red mt-1">
+                  {errors.name.type === 'required' && 'This field is required.'}
+                  {errors.name.type === 'maxLength' && 'Max length is 100 char.'}
+                </p>
+              )}
+              <input
+                className="w-full md:1-auto bg-white text-black font-semibold placeholder-opaque-black p-3 mb-1 rounded-md"
+                placeholder="Email"
+                {...register('email', {
+                  required: true,
+                  minLength: 2,
+                  maxLength: 100,
+                  pattern: {
+                    value: emailRegex,
+                    message: 'Enter a valid Email Address.',
+                  },
+                })}
+              />
+              {errors.email && (
+                <p className="text-red mt-1">
+                  {errors.email.type === 'required' && 'This field is required.'}
+                  {errors.email.type === 'pattern' && 'Invalid email address.'}
+                </p>
+              )}
+            </div>
+            <textarea
+              className="bg-white text-black font-semibold placeholder-opaque-black py-3 px-3 rounded-md"
+              placeholder="Message"
+              {...register('message', {
+                required: true,
+                minLength: 2,
+                maxLength: 100,
+              })}
+            />
+            {errors.message && (
+              <p className="text-red mt-1">
+                {errors.message.type === 'required' && 'This field is required.'}
+                {errors.message.type === 'maxLength' && 'Max length is 2000 char.'}
+              </p>
+            )}
+
+            <button
+              className="p-2 bg-yellow font-semibold text-deep-blue mt-1 hover:bg-red hover:text-white transition duration-500 rounded-md"
+              type="submit"
+            >
+              Send
+            </button>
+          </form>
+        </motion.div>
+      </div>
     </section>
   )
 }
