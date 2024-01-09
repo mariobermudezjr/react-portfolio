@@ -88,7 +88,10 @@ const Projects = () => {
           <Project title="React Dashboard" desc="Stunning color scheme Admin Dashboard." />
 
           {/* ROW 2 */}
-          <Project title="Project 3" desc="Project Description" />
+          <Project
+            title="ios AI API integration"
+            desc="This app is connected to state of the art ChatGPT via API integration."
+          />
           <Project title="Project 4" desc="Project Description" />
           <Project
             title="iOS AI Assistant"

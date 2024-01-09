@@ -1,5 +1,5 @@
-import LineGradient from "../components/LineGradient";
-import { motion } from "framer-motion";
+import LineGradient from '../components/LineGradient'
+import { motion } from 'framer-motion'
 
 const Testimonials = () => {
   return (
@@ -16,13 +16,11 @@ const Testimonials = () => {
           visible: { opacity: 1, x: 0 },
         }}
       >
-        <p className="font-playfair font-semibold text-4xl mb-5 text-red">
-          TESTIMONIALS
-        </p>
+        <p className="font-playfair font-semibold text-4xl mb-5 text-red">TESTIMONIALS</p>
         <LineGradient width="mx-auto w-2/5" />
         <p className="mt-10">
-          Here's What People are Saying About My Work. Aliquam aliquet integer
-          ut fames odio in at. At magna ornare dictum lectus.
+          Here's What People are Saying About My Work. Aliquam aliquet integer ut fames odio in at.
+          At magna ornare dictum lectus.
         </p>
       </motion.div>
 
@@ -60,8 +58,7 @@ const Testimonials = () => {
         >
           <p className="font-playfair text-6xl">“</p>
           <p className="text-center text-xl">
-            Aliquam aliquet integer ut fames odio in at. At magna ornare dictum
-            lectus.
+            Aliquam aliquet integer ut fames odio in at. At magna ornare dictum lectus.
           </p>
         </motion.div>
 
@@ -78,13 +75,11 @@ const Testimonials = () => {
           }}
         >
           <p className="font-playfair text-6xl">“</p>
-          <p className="text-center text-xl">
-            Fames odio in at. At magna ornare dictum lectus.
-          </p>
+          <p className="text-center text-xl">Fames odio in at. At magna ornare dictum lectus.</p>
         </motion.div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Testimonials;
+export default Testimonials
