@@ -18,14 +18,6 @@ const SocialMediaIcons = () => {
       >
         <img alt="github-link" src={require('../assets/github.png')} />
       </a>
-      <a
-        className="hover:opacity-50 transition duration-500"
-        href="skype:live:.cid.74c3bfe85cd99c3e?call"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <img alt="github-link" src={require('../assets/skype3.png')} />
-      </a>
     </div>
   )
 }
