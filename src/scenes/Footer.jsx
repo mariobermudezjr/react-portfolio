@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="md:flex justify-center md:justify-between text-center ">
           <p className="font-playfair font-semibold text-2xl text-white">Mario Bermudez Jr</p>
           <p className="font-playfair text-md text-white">
-            ©2023 Curious Loop. All Rights Reserved.
+            ©{new Date().getFullYear()} Curious Loop. All Rights Reserved.
           </p>
         </div>
       </div>
