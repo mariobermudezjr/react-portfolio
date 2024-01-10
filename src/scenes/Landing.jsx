@@ -62,7 +62,7 @@ const Landing = ({ setSelectedPage }) => {
             focused on customer satisfaction. Proven experience developing consumer-focused web
             sites. Worked through challenges by designing and developing solutions and building web
             applications aligned to customer's services. Translating solutions into code and working
-            across many different APIs, third-party integrations and databases.”
+            across many different APIs, third-party integrations and databases.
           </p>
         </motion.div>
 
@@ -78,14 +78,14 @@ const Landing = ({ setSelectedPage }) => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <AnchorLink
+          {/* <AnchorLink
             className="bg-gradient-rainblue text-deep-blue rounded-sm py-2 px-6 font-semibold mr-4
               hover:bg-blue hover:text-white transition duration-500"
             onClick={() => setSelectedPage('skills')}
             href="#skills"
           >
             Explore
-          </AnchorLink>
+          </AnchorLink> */}
           <AnchorLink
             className="rounded-r-sm bg-gradient-rainblue py-0.5 pr-1.5 mr-3"
             onClick={() => setSelectedPage('projects')}
