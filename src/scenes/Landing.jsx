@@ -5,10 +5,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const Landing = ({ setSelectedPage }) => {
   const isAboveLarge = useMediaQuery('(min-width: 1060px)')
-  const isMobile = useMediaQuery('(max-width: 600px)')
 
-  console.log('isMobile: ', isMobile)
-  console.log('isAboveLarge: ', isAboveLarge)
   return (
     <section
       id="home"
@@ -82,7 +79,7 @@ const Landing = ({ setSelectedPage }) => {
           }}
         >
           <AnchorLink
-            className="bg-gradient-rainblue text-deep-blue rounded-sm py-2 px-10 font-semibold mr-4
+            className="bg-gradient-rainblue text-deep-blue rounded-sm py-2 px-6 font-semibold mr-4
               hover:bg-blue hover:text-white transition duration-500"
             onClick={() => setSelectedPage('skills')}
             href="#skills"
@@ -90,14 +87,23 @@ const Landing = ({ setSelectedPage }) => {
             Explore
           </AnchorLink>
           <AnchorLink
-            className="rounded-r-sm bg-gradient-rainblue py-0.5 pr-1.5"
+            className="rounded-r-sm bg-gradient-rainblue py-0.5 pr-1.5 mr-3"
             onClick={() => setSelectedPage('projects')}
             href="#projects"
           >
-            <div className="bg-deep-blue hover:text-red transition duration-500 py-2 w-full h-full flex items-center align-center mx-1 justify-center px-10 font-playfair">
+            <div className="bg-deep-blue hover:text-red transition duration-500 py-2 w-full h-full flex items-center align-center mx-1 justify-center px-6 font-playfair ">
               Projects
             </div>
           </AnchorLink>
+
+          <a
+            className="bg-gradient-rainblue text-deep-blue rounded-sm py-2 px-6 font-semibold mr-4
+                        hover:bg-blue hover:text-white transition duration-500"
+            download=""
+            href="https://drive.google.com/file/d/1qfNbyVV4kBt5gXGGmzDGeoAuImK7kMQ_/view?usp=sharing"
+          >
+            Resume
+          </a>
         </motion.div>
 
         <motion.div
