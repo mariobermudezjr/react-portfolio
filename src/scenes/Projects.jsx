@@ -92,14 +92,14 @@ const Projects = () => {
             title="ios AI API integration"
             desc="This app is connected to state of the art ChatGPT via API integration."
           />
-          <Project title="Project 4" desc="Project Description" />
+          <Project title="TBD" desc="TBD Description" />
           <Project
             title="iOS AI Assistant"
             desc="A native app that leverages RN tech for both Android and iOS"
           />
 
           {/* ROW 3 */}
-          <Project title="Project 6" desc="Project Description" />
+          <Project title="TBD2" desc="TBD Description" />
           <Project
             title="Dashboard Customization"
             desc="Dark Mode, Notifications, Settings and Download Reports."
