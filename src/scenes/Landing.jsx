@@ -100,7 +100,7 @@ const Landing = ({ setSelectedPage }) => {
             className="bg-gradient-rainblue text-deep-blue rounded-sm py-2 px-6 font-semibold mr-4
                         hover:bg-blue hover:text-white transition duration-500"
             download=""
-            href="https://drive.google.com/file/d/1qfNbyVV4kBt5gXGGmzDGeoAuImK7kMQ_/view?usp=sharing"
+            href="https://drive.google.com/file/d/1KHysVD8E6GjRF-EUONA8R0G2Ap1QeoNG/view?usp=sharing"
           >
             Resume
           </a>
