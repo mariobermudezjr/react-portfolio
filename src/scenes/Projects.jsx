@@ -15,23 +15,25 @@ const projectVariant = {
   visible: { opacity: 1, scale: 1 },
 }
 
-const Project = ({ title, desc }) => {
+const Project = ({ title, desc, link }) => {
   const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
     bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-deep-blue`
   const projectTitle = title.split(' ').join('-').toLowerCase()
 
   return (
-    <motion.div variants={projectVariant} className="relative">
-      <div className={overlayStyles}>
-        <p className="text-2xl font-playfair">{title}</p>
-        <p className="mt-7">{desc}</p>
-      </div>
-      {/* 
+    <motion.div variants={projectVariant} className="relative cursor-pointer">
+      <a download="" href={link}>
+        <div className={overlayStyles}>
+          <p className="text-2xl font-playfair">{title}</p>
+          <p className="mt-7">{desc}</p>
+        </div>
+        {/* 
     Note to Future Self:
     To add new assets to the pojrect, the path of assets is the following:
     Example for MacOSX: /Users/macbookair/Desktop/src/personal/react-portfolio/public/assets/{filename}
     */}
-      <img src={`../assets/${projectTitle}.jpeg`} alt={projectTitle} />
+        <img src={`../assets/${projectTitle}.jpeg`} alt={projectTitle} />
+      </a>
     </motion.div>
   )
 }
@@ -84,25 +86,33 @@ const Projects = () => {
           <Project
             title="SpaceX GQL Challenge"
             desc="Combining GQL with React using Apollo client."
+            link="https://sweet-scone-edd3cc.netlify.app/rocket/5e9d0d95eda69973a809d1ec"
           />
-          <Project title="React Dashboard" desc="Stunning color scheme Admin Dashboard." />
+          <Project
+            title="React Dashboard"
+            desc="Stunning color scheme Admin Dashboard."
+            link="https://www.google.com/"
+          />
 
           {/* ROW 2 */}
           <Project
             title="ios AI API integration"
             desc="This app is connected to state of the art ChatGPT via API integration."
+            link="https://www.google.com/"
           />
-          <Project title="TBD" desc="TBD Description" />
+          <Project title="e-Commerce" desc="Clean design with Strapi backend headless CMS." />
           <Project
             title="iOS AI Assistant"
             desc="A native app that leverages RN tech for both Android and iOS"
+            link="https://main--stellar-licorice-9945f5.netlify.app/"
           />
 
           {/* ROW 3 */}
-          <Project title="TBD2" desc="TBD Description" />
+          <Project title="TBD2" desc="TBD Description" link="https://www.google.com/" />
           <Project
             title="Dashboard Customization"
             desc="Dark Mode, Notifications, Settings and Download Reports."
+            link="https://www.google.com/"
           />
           <div
             className="flex justify-center text-center items-center p-10 bg-blue
