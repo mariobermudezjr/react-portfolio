@@ -100,7 +100,11 @@ const Projects = () => {
             desc="This app is connected to state of the art ChatGPT via API integration."
             link="https://www.google.com/"
           />
-          <Project title="e-Commerce" desc="Clean design with Strapi backend headless CMS." />
+          <Project
+            title="e-Commerce"
+            desc="Clean design with Strapi backend headless CMS."
+            link="https://main--stellar-licorice-9945f5.netlify.app/"
+          />
           <Project
             title="iOS AI Assistant"
             desc="A native app that leverages RN tech for both Android and iOS"
