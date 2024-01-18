@@ -108,7 +108,11 @@ const Projects = () => {
           />
 
           {/* ROW 3 */}
-          <Project title="TBD2" desc="TBD Description" link="https://www.google.com/" />
+          <Project
+            title="Stripe Integration"
+            desc="Smart and Secure checkout using Stripe with cutting edge payment security"
+            link="https://main--stellar-licorice-9945f5.netlify.app/"
+          />
           <Project
             title="Dashboard Customization"
             desc="Dark Mode, Notifications, Settings and Download Reports."
