@@ -98,7 +98,7 @@ const Projects = () => {
           <Project
             title="ios AI API integration"
             desc="This app is connected to state of the art ChatGPT via API integration."
-            link="https://www.google.com/"
+            link="https://appetize.io/app/4hhnamp4ljvcukr6h2irkfelry?device=iphone14pro&osVersion=16.2"
           />
           <Project
             title="e-Commerce"
@@ -108,7 +108,7 @@ const Projects = () => {
           <Project
             title="iOS AI Assistant"
             desc="A native app that leverages RN tech for both Android and iOS"
-            link="https://main--stellar-licorice-9945f5.netlify.app/"
+            link="https://appetize.io/app/4hhnamp4ljvcukr6h2irkfelry?device=iphone14pro&osVersion=16.2"
           />
 
           {/* ROW 3 */}
