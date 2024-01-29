@@ -6,55 +6,55 @@ import { motion } from 'framer-motion'
 const Contact = () => {
   const {
     register,
-    handleSubmit,
+    // handleSubmit,
     reset,
     formState,
     formState: { errors },
   } = useForm({ defaultValues: { name: '', email: '', message: '' } })
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
 
-  const onSubmit = async (data, e) => {
-    e.preventDefault()
-    let newKeyValuePairs = []
-    Object.keys(data).map((key) => {
-      newKeyValuePairs.push(key + '=' + data[key])
-    })
-    let yourDate = new Date()
+  // const onSubmit = async (data, e) => {
+  //   e.preventDefault()
+  //   let newKeyValuePairs = []
+  //   Object.keys(data).map((key) => {
+  //     newKeyValuePairs.push(key + '=' + data[key])
+  //   })
+  //   let yourDate = new Date()
 
-    newKeyValuePairs.push('Date' + '=' + yourDate.toISOString().split('T')[0])
-    let newFormDataString = newKeyValuePairs.join('&')
+  //   newKeyValuePairs.push('Date' + '=' + yourDate.toISOString().split('T')[0])
+  //   let newFormDataString = newKeyValuePairs.join('&')
 
-    try {
-      await fetch(`${process.env.REACT_APP_GOOGLE_URL}`, {
-        method: 'POST',
-        redirect: 'follow',
-        body: newFormDataString,
-        headers: {
-          'Content-Type': 'text/plain;charset=utf-8',
-        },
-      })
-        .then((response) => {
-          // Check if the request was successful
-          if (response) {
-            alert('Message Sent!')
-            return response // Assuming your script returns JSON response
-          } else {
-            throw new Error('Failed to submit the form.')
-          }
-        })
-        .then((data) => {
-          // Display a success message
-        })
-        .catch((error) => console.log(error))
-      // const data = await response.json()
-    } catch (error) {
-      // Display Error that something went wrong
-      alert('Failed to send, try changing your input values')
-    }
-  }
-  const onError = (errors, e) => {
-    alert('Failed to send, check required fields')
-  }
+  //   try {
+  //     await fetch(`${process.env.REACT_APP_GOOGLE_URL}`, {
+  //       method: 'POST',
+  //       redirect: 'follow',
+  //       body: newFormDataString,
+  //       headers: {
+  //         'Content-Type': 'text/plain;charset=utf-8',
+  //       },
+  //     })
+  //       .then((response) => {
+  //         // Check if the request was successful
+  //         if (response) {
+  //           alert('Message Sent!')
+  //           return response // Assuming your script returns JSON response
+  //         } else {
+  //           throw new Error('Failed to submit the form.')
+  //         }
+  //       })
+  //       .then((data) => {
+  //         // Display a success message
+  //       })
+  //       .catch((error) => console.log(error))
+  //     // const data = await response.json()
+  //   } catch (error) {
+  //     // Display Error that something went wrong
+  //     alert('Failed to send, try changing your input values')
+  //   }
+  // }
+  // const onError = (errors, e) => {
+  //   alert('Failed to send, check required fields')
+  // }
 
   useEffect(() => {
     if (formState.isSubmitSuccessful) {
@@ -115,7 +115,7 @@ const Contact = () => {
         >
           <form
             className="flex flex-col justify-evenly place-content-center mt-20"
-            onSubmit={handleSubmit(onSubmit, onError)}
+            // onSubmit={handleSubmit(onSubmit, onError)}
           >
             <div>
               <input
