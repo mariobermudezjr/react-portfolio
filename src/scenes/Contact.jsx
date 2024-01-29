@@ -52,9 +52,9 @@ const Contact = () => {
   //     alert('Failed to send, try changing your input values')
   //   }
   // }
-  const onError = (errors, e) => {
-    alert('Failed to send, check required fields')
-  }
+  // const onError = (errors, e) => {
+  //   alert('Failed to send, check required fields')
+  // }
 
   useEffect(() => {
     if (formState.isSubmitSuccessful) {
