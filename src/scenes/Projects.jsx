@@ -86,7 +86,7 @@ const Projects = () => {
           <Project
             title="SpaceX GQL Challenge"
             desc="Combining GQL with React using Apollo client."
-            link="https://sweet-scone-edd3cc.netlify.app/rocket/5e9d0d95eda69973a809d1ec"
+            link="https://sweet-scone-edd3cc.netlify.app/"
           />
           <Project
             title="React Dashboard"
